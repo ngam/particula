@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Startup &#8212; Particula Book</title>
+    <title>2. Particle Class &#8212; Particula Book</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Documentation and Reference" href="../documentation/d000_detailed_documentation.html" />
-    <link rel="prev" title="1. Startup and Installation" href="../getting_started.html" />
+    <link rel="next" title="3. Documentation and Reference" href="../documentation/d000_detailed_documentation.html" />
+    <link rel="prev" title="1. Installing particula" href="../getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,7 +106,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
-   1. Startup and Installation
+   1. Installing
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     particula
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -118,7 +123,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Startup
+   2. Particle Class
   </a>
  </li>
 </ul>
@@ -130,7 +135,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../documentation/d000_detailed_documentation.html">
-   5. Documentation and Reference
+   3. Documentation and Reference
   </a>
  </li>
 </ul>
@@ -142,12 +147,12 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../CONTRIBUTING.html">
-   6. Contribution Guidelines
+   4. Contributor Guidelines
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CODE_OF_CONDUCT.html">
-   7. Contributor Covenant Code of Conduct
+   5. Contributor Covenant Code of Conduct
   </a>
  </li>
 </ul>
@@ -159,7 +164,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../FAQ.html">
-   8. FAQ
+   6. FAQ
   </a>
  </li>
 </ul>
@@ -276,24 +281,25 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2. Startup
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-peek-into-aerosol-dynamics">
-   3. A peek into
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aerosol-dynamics-module">
+   2.1.
    <code class="docutils literal notranslate">
     <span class="pre">
      aerosol_dynamics
     </span>
    </code>
+   module
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example">
-   4. An example…
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-coagulation">
+   2.2. Calculating coagulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-coagulation-rate-coefficient">
+   2.3. The coagulation rate coefficient
   </a>
  </li>
 </ul>
@@ -307,9 +313,9 @@
         
               <div>
                 
-  <div class="section" id="startup">
-<h1><span class="section-number">2. </span>Startup<a class="headerlink" href="#startup" title="Permalink to this headline">¶</a></h1>
-<p>First, install <code class="docutils literal notranslate"><span class="pre">particula</span></code> from PyPI using <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">particula</span></code> or <code class="docutils literal notranslate"><span class="pre">%pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">particula</span></code>. In this, the <code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">%</span></code> are so-called magic signs prefixing “magic functions”. In this case, the magic function is <code class="docutils literal notranslate"><span class="pre">%pip</span></code> — which is one way to install Python packages from the PyPI (the Python Package Index). The <code class="docutils literal notranslate"><span class="pre">-U</span></code> is to instruct <code class="docutils literal notranslate"><span class="pre">pip</span></code> to update particula to the latest version.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="particle-class">
+<h1><span class="section-number">2. </span>Particle Class<a class="headerlink" href="#particle-class" title="Permalink to this headline">¶</a></h1>
+<p>First, install <code class="docutils literal notranslate"><span class="pre">particula</span></code> from PyPI using <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">particula</span></code> or <code class="docutils literal notranslate"><span class="pre">%pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">particula</span></code>. The <code class="docutils literal notranslate"><span class="pre">!</span></code> are <code class="docutils literal notranslate"><span class="pre">%</span></code> symbols are so-called magic signs prefixing “magic functions”. In this case, the magic function is <code class="docutils literal notranslate"><span class="pre">%pip</span></code> — which is one way to install Python packages from the PyPI (the Python Package Index). The <code class="docutils literal notranslate"><span class="pre">-U</span></code> is to instruct <code class="docutils literal notranslate"><span class="pre">pip</span></code> to update particula to the latest version.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install -U particula
@@ -322,12 +328,12 @@
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pint in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from particula) (0.18)
 Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from particula) (1.21.5)
-Requirement already satisfied: importlib-metadata in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pint-&gt;particula) (4.10.0)
 Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pint-&gt;particula) (21.3)
-Requirement already satisfied: zipp&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from importlib-metadata-&gt;pint-&gt;particula) (3.6.0)
+Requirement already satisfied: importlib-metadata in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from pint-&gt;particula) (4.10.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: typing-extensions&gt;=3.6.4 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from importlib-metadata-&gt;pint-&gt;particula) (4.0.1)
+Requirement already satisfied: zipp&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from importlib-metadata-&gt;pint-&gt;particula) (3.6.0)
 Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages (from packaging-&gt;pint-&gt;particula) (3.0.6)
 </pre></div>
 </div>
@@ -396,10 +402,10 @@ FILE
 </div>
 </div>
 </div>
-<p>The above two code cells show that we have the prerelease version <code class="docutils literal notranslate"><span class="pre">0.0.2</span></code> (our latest as of writing this). We still are in the process of writing more thorough documentation, and so a help call on <code class="docutils literal notranslate"><span class="pre">particula</span></code> yields a shout — maybe a shout for help? <code class="docutils literal notranslate"><span class="pre">PARTICULA!</span></code> However, we get a hint about what else is inside this package, <code class="docutils literal notranslate"><span class="pre">aerosol_dynamics</span></code> package/module. We will check this now.</p>
-</div>
-<div class="section" id="a-peek-into-aerosol-dynamics">
-<h1><span class="section-number">3. </span>A peek into <code class="docutils literal notranslate"><span class="pre">aerosol_dynamics</span></code><a class="headerlink" href="#a-peek-into-aerosol-dynamics" title="Permalink to this headline">¶</a></h1>
+<p>The above two code cells show that we have the prerelease version <code class="docutils literal notranslate"><span class="pre">0.0.3</span></code> (our latest as of writing this). We still are in the process of writing more thorough documentation, and so a help call on <code class="docutils literal notranslate"><span class="pre">particula</span></code> yields a minimal description. However, we get a hint about what else is inside this package, <code class="docutils literal notranslate"><span class="pre">aerosol_dynamics</span></code> package/module. We will check this now.</p>
+<p>We also see <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">&lt;pint.registry.UnitRegistry</span> <span class="pre">object&gt;</span></code> under <code class="docutils literal notranslate"><span class="pre">DATA</span></code>: This is our unit registry which ensures proper unit tracking throughout each entire instance of the package.</p>
+<div class="section" id="aerosol-dynamics-module">
+<h2><span class="section-number">2.1. </span><code class="docutils literal notranslate"><span class="pre">aerosol_dynamics</span></code> module<a class="headerlink" href="#aerosol-dynamics-module" title="Permalink to this headline">¶</a></h2>
 <p>We can import <code class="docutils literal notranslate"><span class="pre">aerosol_dynamics</span></code> either via</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">particula</span> <span class="kn">import</span> <span class="n">aerosol_dynamics</span>
 </pre></div>
@@ -697,9 +703,9 @@ FILE
 </div>
 <p>We see there is more documentation now. The <code class="docutils literal notranslate"><span class="pre">help</span></code> call lists a “class” called “Particle” and all its available “methods” (read: functions) alphabetically. For now, you can think of a class as a super-function (it is more than that). Note also, that classes follow <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> (hence, <code class="docutils literal notranslate"><span class="pre">Particle</span></code>) whereas methods/functions follow snake_case (hence, <code class="docutils literal notranslate"><span class="pre">reduced_mass</span></code>). We make a lot of use of unit registry (called <code class="docutils literal notranslate"><span class="pre">u</span></code>) to ensure all our calculations have proper units, even if dimensionless. Without further ado, let’s look at an example.</p>
 </div>
-<div class="section" id="an-example">
-<h1><span class="section-number">4. </span>An example…<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h1>
-<p>… to calculate the dimensionless coagulation rate. Let’s define to particles, <code class="docutils literal notranslate"><span class="pre">particle_a</span></code> and <code class="docutils literal notranslate"><span class="pre">particle_b</span></code>.</p>
+<div class="section" id="calculating-coagulation">
+<h2><span class="section-number">2.2. </span>Calculating coagulation<a class="headerlink" href="#calculating-coagulation" title="Permalink to this headline">¶</a></h2>
+<p>Let’s define to particles, <code class="docutils literal notranslate"><span class="pre">particle_a</span></code> and <code class="docutils literal notranslate"><span class="pre">particle_b</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">particle_a</span> <span class="o">=</span> <span class="n">particle</span><span class="o">.</span><span class="n">Particle</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span> <span class="n">charge</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -752,7 +758,7 @@ FILE
 <div class="cell_output docutils container">
 <div class="output text_html">0 dimensionless</div></div>
 </div>
-<p>We should also define the environment we are in. We will get that module and invoke with 300 K and <span class="math notranslate nohighlight">\(10^5\)</span> Pa.</p>
+<p>We should also define the environment we are in. We will get that module and invoke with 300 K and 10,000 Pa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">particula.aerosol_dynamics</span> <span class="kn">import</span> <span class="n">environment</span>
@@ -824,7 +830,7 @@ FILE
 <div class="cell_output docutils container">
 <div class="output text_html">2.4595460300833962×10<sup>-15</sup> kilogram/second</div></div>
 </div>
-<p>Finally, we can calculate the coagulation rate coefficient between particles “a” and “b” in this environment. Note that we could have called this directly after defining “a” and “b”.</p>
+<p>We can also calculate the coagulation rate coefficient between particles “a” and “b” in this environment. Note that we could have called this directly after defining “a” and “b”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">particle</span><span class="o">.</span><span class="n">Particle</span><span class="o">.</span><span class="n">dimensionless_coagulation_kernel_hard_sphere</span><span class="p">(</span>
@@ -846,6 +852,89 @@ FILE
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">83.4628646051075 dimensionless</div></div>
+</div>
+</div>
+<div class="section" id="the-coagulation-rate-coefficient">
+<h2><span class="section-number">2.3. </span>The coagulation rate coefficient<a class="headerlink" href="#the-coagulation-rate-coefficient" title="Permalink to this headline">¶</a></h2>
+<p>Perhaps most importantly, we can calculate the binary coagulation rate coefficient. This is done via the method <code class="docutils literal notranslate"><span class="pre">dimensioned_coagulation_kernel</span></code>. Let’s call help on this method to see what we can do.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">particle</span><span class="o">.</span><span class="n">Particle</span><span class="o">.</span><span class="n">dimensioned_coagulation_kernel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function dimensioned_coagulation_kernel in module particula.aerosol_dynamics.particle:
+
+dimensioned_coagulation_kernel(self, other, environment: particula.aerosol_dynamics.environment.Environment, authors: str = &#39;cg2019&#39;) -&gt; float
+    Dimensioned particle--particle coagulation kernel.
+    
+    Checks units: [m**3/s]
+    
+    Paramaters:
+    
+        self:           particle 1
+        other:          particle 2
+        environment:    environment conditions
+        authors:        authors of the parameterization
+            - gh2012    https://doi.org/10.1103/PhysRevE.78.046402
+            - cg2020    https://doi.org/XXXXXXXXXXXXXXXXXXXXXXXXXX
+            - hard_sphere (from above)
+            (default: cg2019)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that we have have to supply two particles alongside the environment — additionally, we get to choose between different parameterizations under “authors”, which defaults to a recent study.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">particle_a</span><span class="o">.</span><span class="n">dimensioned_coagulation_kernel</span><span class="p">(</span>
+    <span class="n">particle_b</span><span class="p">,</span> <span class="n">std_environment</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">4.655713855465682×10<sup>-16</sup> meter<sup>3</sup>/second</div></div>
+</div>
+<p>For a more interesting example, let’s look at the interaction between a negative ion and a positive particle. We first need to define these two entities alongside an environment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">negative_ion</span> <span class="o">=</span> <span class="n">particle</span><span class="o">.</span><span class="n">Particle</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;negative_ion&quot;</span><span class="p">,</span>
+    <span class="n">radius</span><span class="o">=</span><span class="mf">0.5e-9</span><span class="p">,</span>
+    <span class="n">density</span><span class="o">=</span><span class="mf">1.84e3</span><span class="p">,</span>
+    <span class="n">charge</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">positive_particle</span> <span class="o">=</span> <span class="n">particle</span><span class="o">.</span><span class="n">Particle</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;positive_particle&quot;</span><span class="p">,</span>
+    <span class="n">radius</span><span class="o">=</span><span class="mf">3e-9</span><span class="p">,</span>
+    <span class="n">density</span><span class="o">=</span><span class="mf">1.7e3</span><span class="p">,</span>
+    <span class="n">charge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">standard_environment_ip</span> <span class="o">=</span> <span class="n">environment</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+    <span class="n">pressure</span><span class="o">=</span><span class="mi">101325</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The coagulation between these two entities should be approximately <span class="math notranslate nohighlight">\(10^{-6}\)</span> cm<span class="math notranslate nohighlight">\(^{3}\)</span>/s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">negative_ion</span><span class="o">.</span><span class="n">dimensioned_coagulation_kernel</span><span class="p">(</span>
+    <span class="n">positive_particle</span><span class="p">,</span> <span class="n">standard_environment_ip</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">4.670176867752661×10<sup>-13</sup> meter<sup>3</sup>/second</div></div>
+</div>
+<p>That is approximatley <span class="math notranslate nohighlight">\(5 \times 10^{-7}\)</span> cm<span class="math notranslate nohighlight">\(^{3}\)</span>/s, which is within an order of magnitude of our physics-based reasoning.</p>
 </div>
 </div>
 
@@ -878,13 +967,13 @@ FILE
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Startup and Installation</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Installing <code class="docutils literal notranslate"><span class="pre">particula</span></code></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../documentation/d000_detailed_documentation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Documentation and Reference</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Documentation and Reference</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
