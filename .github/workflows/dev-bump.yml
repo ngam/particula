@@ -1,0 +1,20 @@
+name: version bump
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: sed -r -i 's/(devnum=)([0-9]+)/echo "\1$((\2+1))"/ge' particula/__init__.py
+
