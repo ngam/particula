@@ -19,4 +19,5 @@ from pint import UnitRegistry
 # u is the unit registry name.
 u = UnitRegistry()
 
-__version__ = "0.0.4.dev4"
+devnum=5
+__version__ = "0.0.4.dev" + str(devnum)
