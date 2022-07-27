@@ -717,12 +717,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="making-a-particle-distribution">
 <h1>Making a particle distribution.<a class="headerlink" href="#making-a-particle-distribution" title="Permalink to this headline">#</a></h1>
-<p>We are going to look at two classes in particula, for this notebook. The first is <code class="docutils literal notranslate"><span class="pre">particle_distribution</span></code> and the second (<code class="docutils literal notranslate"><span class="pre">dynamic_step</span></code>) we’ll use to move forward in time.</p>
+<p>We are going to look at two classes in particula, for this notebook. The first is <code class="docutils literal notranslate"><span class="pre">particle</span></code> and the second (<code class="docutils literal notranslate"><span class="pre">rates</span></code>) we’ll use to move forward in time.</p>
 <p>So lets get those imported along with numpy and plotting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from particula import u</span>
-<span class="kn">from</span> <span class="nn">particula</span> <span class="kn">import</span> <span class="n">particle</span><span class="p">,</span> <span class="n">dynamic_step</span>
+<span class="kn">from</span> <span class="nn">particula</span> <span class="kn">import</span> <span class="n">particle</span><span class="p">,</span> <span class="n">rates</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 </pre></div>
@@ -737,7 +737,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">default_distribution</span> <span class="o">=</span> <span class="n">particle</span><span class="o">.</span><span class="n">ParticleDistribution</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radii&quot;</span><span class="p">)</span>
-<span class="n">default_distribution</span><span class="o">.</span><span class="n">pre_radius</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">default_distribution</span><span class="o">.</span><span class="n">pre_radius</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -751,7 +751,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Particles PFD given radii.&quot;</span><span class="p">)</span>
-<span class="n">default_distribution</span><span class="o">.</span><span class="n">pre_distribution</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">default_distribution</span><span class="o">.</span><span class="n">pre_distribution</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -944,8 +944,8 @@ Total volume of the PDF, 0.0003653651719983997 dimensionless
 <p>Now with particle number distribution we can calculated the coagulation rate, both the loss and gain in particle number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coarse_coag_loss</span> <span class="o">=</span> <span class="n">dynamic_step</span><span class="o">.</span><span class="n">DynamicStep</span><span class="p">(</span><span class="o">**</span><span class="n">coarse_mode</span><span class="p">)</span><span class="o">.</span><span class="n">coag_loss</span><span class="p">()</span>
-<span class="n">coarse_coag_gain</span> <span class="o">=</span> <span class="n">dynamic_step</span><span class="o">.</span><span class="n">DynamicStep</span><span class="p">(</span><span class="o">**</span><span class="n">coarse_mode</span><span class="p">)</span><span class="o">.</span><span class="n">coag_gain</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coarse_coag_loss</span> <span class="o">=</span> <span class="n">rates</span><span class="o">.</span><span class="n">Rates</span><span class="p">(</span><span class="o">**</span><span class="n">coarse_mode</span><span class="p">)</span><span class="o">.</span><span class="n">coagulation_loss</span><span class="p">()</span>
+<span class="n">coarse_coag_gain</span> <span class="o">=</span> <span class="n">rates</span><span class="o">.</span><span class="n">Rates</span><span class="p">(</span><span class="o">**</span><span class="n">coarse_mode</span><span class="p">)</span><span class="o">.</span><span class="n">coagulation_gain</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
